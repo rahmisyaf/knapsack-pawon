@@ -159,7 +159,7 @@ def pilih_lauk_nasi (budget, total_kenyang_maksimal, list_lauk):
 # main
 while True:
   try:
-    print("\033[33m--------- Menu Utama ---------\033[0m")
+    print("\033[33m---------------- Menu Utama ----------------\033[0m")
     print("\033[33m1. Pilihin Lauk\033[0m")
     print("\033[33m2. Keluar\033[0m")
 
