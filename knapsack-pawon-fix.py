@@ -70,7 +70,7 @@ def pilih_lauk (budget, total_kenyang_maksimal, list_lauk):
     "total_kenyang": total_kenyang_maksimal,
   }
 
-  print("\033[33m------------ Hasil Pilihan Lauk ------------\033[0m")
+  print("\n\033[33m------------ Hasil Pilihan Lauk ------------\033[0m")
   for lauk in hasil_terpilih["lauk"]:
     print(f"\033[36m{lauk['nama']} (Rp{(lauk['harga'])*1000}, Kenyang {lauk['kenyang']})\033[0m")
   
@@ -140,7 +140,7 @@ def pilih_lauk_nasi (budget, total_kenyang_maksimal, list_lauk):
       "total_kenyang": total_kenyang_maksimal + nilai_kenyang_nasi,
     }
 
-    print("\033[33m------------ Hasil Pilihan Lauk ------------\033[0m")
+    print("\n\033[33m------------ Hasil Pilihan Lauk ------------\033[0m")
     for lauk in hasil_terpilih["lauk"]:
       print(f"\033[36m{lauk['nama']} (Rp{(lauk['harga'])*1000}, Kenyang {lauk['kenyang']})\033[0m")
     
