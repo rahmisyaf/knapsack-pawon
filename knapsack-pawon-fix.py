@@ -27,7 +27,6 @@ menu_lauk = [
 
 # fungsi pilih menu kalo ngga pake nasi
 def pilih_lauk (budget, total_kenyang_maksimal, list_lauk):
-  # jumlah_iterasi = 0
 
   jumlah_lauk = len(list_lauk)
 
@@ -37,7 +36,6 @@ def pilih_lauk (budget, total_kenyang_maksimal, list_lauk):
   
   for indeks_lauk in range (1, jumlah_lauk + 1):
     for kapasitas in range (1, budget + 1) :
-      # jumlah_iterasi += 1
 
       harga_lauk = list_lauk[indeks_lauk - 1]["harga"]
       nilai_kenyang = list_lauk[indeks_lauk - 1]["kenyang"]
@@ -81,9 +79,12 @@ def pilih_lauk (budget, total_kenyang_maksimal, list_lauk):
   print(f"Total kenyang\t: {hasil_terpilih['total_kenyang']}")
   print(f"Sisa uang\t: Rp{(budget*1000) - (hasil_terpilih['total_harga'])*1000}")
 
-  # print(f"\n\033[35mJumlah iterasi: {jumlah_iterasi}\033[0m\n")
-  print(f"\033[35mKompleksitas: O(n × budget) = O({len(menu_lauk)} × {budget_user}) = O({len(menu_lauk) * budget_user})\033[0m\n")
+  print(f"\n\033[35mKompleksitas: O(n × budget) = O({len(menu_lauk)} × {budget_user}) = O({len(menu_lauk) * budget_user})\033[0m\n")
 
+  print("\033[32mWorst Case\t= O(n x W)")
+  print("Best Case\t= O(n)")
+  print("Average Case\t= O(n)\033[0m\n")
+  
 # fungsi pilih menu kalo pake nasi
 def pilih_lauk_nasi (budget, total_kenyang_maksimal, list_lauk):
   if budget <= 6:
@@ -96,16 +97,12 @@ def pilih_lauk_nasi (budget, total_kenyang_maksimal, list_lauk):
 
     jumlah_lauk = len(list_lauk)
 
-    # jumlah_iterasi = 0
-
     # inisiasi tabel dynamic programming nilai awal 0
     dp = [[0 for kapasitas in range (budget_saat_ini + 1)]
           for indeks_lauk in range (jumlah_lauk + 1)]
     
     for indeks_lauk in range (1, jumlah_lauk + 1):
       for kapasitas in range (1, budget_saat_ini + 1) :
-
-        # jumlah_iterasi += 1
 
         harga_lauk = list_lauk[indeks_lauk - 1]["harga"]
         nilai_kenyang = list_lauk[indeks_lauk - 1]["kenyang"]
@@ -152,9 +149,11 @@ def pilih_lauk_nasi (budget, total_kenyang_maksimal, list_lauk):
     print(f"Total kenyang\t: {hasil_terpilih['total_kenyang']}")
     print(f"Sisa uang\t: Rp{(budget*1000) - (hasil_terpilih['total_harga'])*1000}")
 
-  # print(f"\n\033[35mJumlah iterasi: {jumlah_iterasi}\033[0m\n")
-  print(f"\033[35mKompleksitas: O(n × budget) = O({len(menu_lauk)} × {budget_user}) = O({len(menu_lauk) * budget_user})\033[0m\n")
+  print(f"\n\033[35mKompleksitas: O(n × budget) = O({len(menu_lauk)} × {budget_user}) = O({len(menu_lauk) * budget_user})\033[0m\n")
 
+  print("\033[32mWorst Case\t= O(n x W)")
+  print("Best Case\t= O(n)")
+  print("Average Case\t= O(n)\033[0m\n")
 
 
 # main
@@ -177,7 +176,7 @@ while True:
 
         else :
           try:
-            pilih_nasi = str(input("apakah kamu mau pake nasi? (jawab iya/tidak)\n-> "))
+            pilih_nasi = str(input("\napakah kamu mau pake nasi? (jawab iya/tidak)\n-> "))
 
             if pilih_nasi == "iya":
               pilih_lauk_nasi(budget_user, maks_kenyang, menu_lauk)
